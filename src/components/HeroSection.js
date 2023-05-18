@@ -27,7 +27,7 @@ const HeroSection = () => {
                 </div>
                 <div className="container-hero_section__right-side-customer">
                     <p>150k</p>
-                    <p>Clients satisfaits</p>
+                    <p>Personnes satisfaites</p>
                 </div>
             </div>
         </div>

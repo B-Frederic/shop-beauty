@@ -7,10 +7,9 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 import "swiper/scss/navigation";
 // Data
-import { SliderProducts } from "../data/products";
+import { SliderProducts } from "../data/products_data";
 
 const Slider = () => {
-
   return (
     <div className="container-slider">
       <Swiper
@@ -19,7 +18,6 @@ const Slider = () => {
         spaceBetween={40}
         slidesPerView={3}
         slidesPerGroup={1}
-        loopFillGroupWithBlank={true}
         loop={true}
       >
         {SliderProducts.map((slide, index) => (
