@@ -1,0 +1,75 @@
+.container-slider {
+    position: relative;
+
+    .swiper{
+        position: unset;
+        width: 70%;
+        height: 12rem;
+    }
+
+    .swiper-button-prev{
+        left: 6rem;
+    }
+
+    .swiper-button-next{
+        right: 6rem;
+    }
+
+    .swiper-button-next, .swiper-button-prev{
+        color: #000;
+    }
+
+    .swiper-slide{
+        position: relative;
+        display: flex;
+        padding: 1rem;
+        border-radius: 10px;
+        background: #fff;
+        overflow: hidden;
+        user-select: none;
+    }
+
+    &__card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-info{
+            display: flex;
+            flex-direction: column;
+
+            h3{
+                font-size: 1.4rem;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            p{
+                font-size: 0.7rem;
+            }
+        }
+
+        span{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        &-tag{
+            width: max-content;
+            padding: 5px 10px;
+            font-size: 0.7rem;
+            border: 1px solid var(--black);
+            border-radius: 15px;
+            cursor: pointer;
+        }
+    }
+
+    .img{
+        position: absolute;
+        right: 10%;
+        bottom: -20%;
+        width: 30%;
+        height: 100%;
+        transform: rotate(-20deg);
+    }
+}
