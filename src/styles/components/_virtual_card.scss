@@ -1,0 +1,49 @@
+.container-virtual{
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    padding: 2rem;
+
+    &__left{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        :nth-child(1){
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+        
+        :nth-child(2){
+            display: block;
+            width: 20rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        :nth-child(3){
+            font-size: 1.6rem;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        img{
+            position: absolute;
+            bottom: 5rem;
+            width: 10rem;
+        }
+    }
+
+    &__right{
+
+        &-wrapper{
+            width: 30rem;
+        }
+    }
+}
