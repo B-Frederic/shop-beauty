@@ -5,6 +5,7 @@ import Header from './components/Layout/Header';
 import HeroSection from './components/HeroSection';
 import Slider from './components/Slider';
 import VirtualCard from './components/VirtualCard';
+import Products from './components/Products';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <HeroSection />
       <Slider />
       <VirtualCard />
+      <Products />
     </div>
   );
 };
