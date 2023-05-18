@@ -7,6 +7,7 @@ import Slider from './components/Slider';
 import VirtualCard from './components/VirtualCard';
 import Products from './components/Products';
 import Testimonials from './components/Testimonials';
+import Footer from './components/Layout/Footer';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <VirtualCard />
       <Products />
       <Testimonials />
+      <Footer />
     </div>
   );
 };
