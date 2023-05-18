@@ -8,11 +8,11 @@
     }
 
     .swiper-button-prev{
-        left: 6rem;
+        left: 10rem;
     }
 
     .swiper-button-next{
-        right: 6rem;
+        right: 10rem;
     }
 
     .swiper-button-next, .swiper-button-prev{
@@ -27,6 +27,7 @@
         background: #fff;
         overflow: hidden;
         user-select: none;
+        cursor: grab;
     }
 
     &__card{
