@@ -4,6 +4,7 @@ import React from 'react';
 import Header from './components/Layout/Header';
 import HeroSection from './components/HeroSection';
 import Slider from './components/Slider';
+import VirtualCard from './components/VirtualCard';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Header />
       <HeroSection />
       <Slider />
+      <VirtualCard />
     </div>
   );
 };
