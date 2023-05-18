@@ -1,9 +1,12 @@
+// React
 import React from 'react';
+// Components
+import Header from './components/Layout/Header';
 
 const App = () => {
   return (
-    <div>
-      Hello
+    <div className="App">
+      <Header />
     </div>
   );
 };
