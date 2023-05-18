@@ -6,6 +6,7 @@ import HeroSection from './components/HeroSection';
 import Slider from './components/Slider';
 import VirtualCard from './components/VirtualCard';
 import Products from './components/Products';
+import Testimonials from './components/Testimonials';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Slider />
       <VirtualCard />
       <Products />
+      <Testimonials />
     </div>
   );
 };
