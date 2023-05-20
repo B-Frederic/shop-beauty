@@ -54,6 +54,7 @@ export const SliderProducts = [
 
 export const ProductsData = [
   {
+    id: 1,
     name: "Peau",
     detail: "Super soin",
     price: "25",
@@ -61,6 +62,7 @@ export const ProductsData = [
     type: "soin peau",
   },
   {
+    id: 2,
     name: "Peau",
     detail: "Super soin",
     price: "30",
@@ -68,6 +70,7 @@ export const ProductsData = [
     type: "soin peau",
   },
   {
+    id: 3,
     name: "Nature",
     detail: "Soin naturel",
     price: "25",
@@ -75,6 +78,7 @@ export const ProductsData = [
     type: "soin peau",
   },
   {
+    id: 4,
     name: "Fond de teint",
     detail: "Super mine",
     price: "25",
@@ -82,6 +86,7 @@ export const ProductsData = [
     type: "fond de teint",
   },
   {
+    id: 5,
     name: "Après-shampoing",
     detail: "Super après-shampoing",
     price: "30",
@@ -89,6 +94,7 @@ export const ProductsData = [
     type: "après-shampoing",
   },
   {
+    id: 6,
     name: "Nature",
     detail: "Soin naturel",
     price: "25",
@@ -96,6 +102,7 @@ export const ProductsData = [
     type: "soin peau",
   },
   {
+    id: 7,
     name: "Après-shampoing",
     details: "Super après-shampoing",
     price: "30",
@@ -103,6 +110,7 @@ export const ProductsData = [
     type: "après-shampoing",
   },
   {
+    id: 8,
     name: "Après-shampoing",
     details: "Super après-shampoing",
     price: "30",
@@ -110,6 +118,7 @@ export const ProductsData = [
     type: "après-shampoing",
   },
   {
+    id: 9,
     name: "Après-shampoing",
     details: "Super après-shampoing",
     price: "30",
@@ -117,6 +126,7 @@ export const ProductsData = [
     type: "après-shampoing",
   },
   {
+    id: 10,
     name: "Après-shampoing",
     details: "Super après-shampoing",
     price: "30",
@@ -124,6 +134,7 @@ export const ProductsData = [
     type: "après-shampoing",
   },
   {
+    id: 11,
     name: "Fond de teint",
     details: "Super mine",
     price: "12",
@@ -131,6 +142,7 @@ export const ProductsData = [
     type: "fond de teint",
   },
   {
+    id: 12,
     name: "Fond de teint",
     details: "Super mine",
     price: "12",
@@ -138,6 +150,7 @@ export const ProductsData = [
     type: "fond de teint",
   },
   {
+    id: 13,
     name: "Fond de teint",
     details: "Super mine",
     price: "12",
@@ -145,6 +158,7 @@ export const ProductsData = [
     type: "fond de teint",
   },
   {
+    id: 14,
     name: "Fond de teint",
     details: "Super mine",
     price: "12",

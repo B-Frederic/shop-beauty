@@ -1,8 +1,14 @@
+// General
 @use "styles/settings";
+// Components Layout
 @use "styles/components/Layout/header";
+@use "styles/components/Layout/footer";
+// Components
 @use "styles/components/hero_section";
 @use "styles/components/slider";
 @use "styles/components/virtual_card";
 @use "styles/components/products";
 @use "styles/components/testimonials";
-@use "styles/components/Layout/footer";
+@use "styles/components/cart";
+@use "styles/components/cart_item";
+

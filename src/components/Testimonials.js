@@ -2,7 +2,7 @@
 import React from "react";
 // React swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Pagination } from "swiper";
 // Picture
 import { TestimonialsHero } from "../assets";
 // Data
