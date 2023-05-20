@@ -2,8 +2,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 // Redux
 import { useSelector } from 'react-redux';
+// Stripe
+import StripeCheckout from "react-stripe-checkout";
 // Components
 import CartItem from '../components/CartItem';
+import axios from 'axios';
+
 
 const Cart = () => {
 
@@ -25,15 +29,53 @@ const Cart = () => {
 
     }, [productData, delivery]);
 
+    
+    // Create fake token for Stripe (error bypasse)
+    const payment = async(token) =>{
+        await axios.post("http://localhost:8000/payment", {
+            amout: totalAmt * 100,
+            token: token
+        })
+    }
+
     return (
         <div className="container-cart">
             <CartItem />
-            <div className="container-cart__info">
-                <div className="container-cart__info-cart">
-                    <h2>Paniers totals</h2>
-                    <p className="container-cart__info-cart--sub-total">Sous-total</p>
-                    <p className="container-cart__info-cart--delivery">Frais de livraison : <span>{delivery.current}€</span></p>
-                    <p className="container-cart__info-cart--payment">Total à payer : <span>{totalAmt?.toFixed(2)}€</span> </p>
+            <div>
+                <div className="container-cart__info">
+                    <div className="container-cart__info-cart">
+                        <h2>Paniers totals</h2>
+                        <p className="container-cart__info-cart--sub-total">Sous-total : <span>{totalAmt - delivery.current?.toFixed(2)}€</span></p>
+                        <p className="container-cart__info-cart--delivery">Frais de livraison: <span style={{color: delivery.current !== 0 ? "black" : "rgb(94, 182, 94)"}}>{delivery.current}€</span></p>
+                        <span className="container-cart__info-cart--delivery-offer">(livraison offerte dès 80€ d'achat)</span>
+                        <p className="container-cart__info-cart--payment">Total à payer : <span>{productData.length >= 1 ? totalAmt?.toFixed(2) : 0}€</span></p>
+                        {
+                        totalAmt - delivery.current > 0 ? (
+                            <>
+                                <div className="container-cart__info-cart--stripe">
+                                    <StripeCheckout
+                                        norequired
+                                        stripeKey="pk_test_51N54JHEZFgsxN1Q4dddinn8ng7uUcciSwxQI6ZwNNsLMrbfBK2FF3VFjqrIGVH4NW1MS9ih21fVgKN9b0FiXWcrh00JsSPVfVw"
+                                        name="MonShop"
+                                        amount={totalAmt * 100}
+                                        label="Payer"
+                                        currency="EUR"
+                                        description={`Montant total à payer ${totalAmt?.toFixed(2)} €`}
+                                        token={payment}
+                                        email={"unmailpourtester@test.fr"}
+                                    />
+                                </div>
+                                <div className="container-cart__info-cart--test-card">
+                                    <p>Info CB test :</p>
+                                    <p>Numéro: 4242 4242 4242 4242</p>
+                                    <p>Date: 12/34</p>
+                                    <p>Cryptogramme: 123</p>
+                                </div>
+                            </> ) : (
+                                ""
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         </div>

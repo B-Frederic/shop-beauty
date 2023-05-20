@@ -8,6 +8,11 @@
     .swiper-pagination{
         position: static;
         margin-top: 20px;
+
+        span{
+            width: 0.7rem;
+            height: 0.7rem;
+        }
     }
 
     img{
