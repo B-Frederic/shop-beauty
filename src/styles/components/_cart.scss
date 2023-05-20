@@ -1,0 +1,47 @@
+.container-cart{
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    width: 80%;
+    margin: 2rem auto;
+
+    &__info{
+        display: flex;
+        justify-content: center;
+        margin-left: 2rem;
+        height: 400px;
+        
+        &-cart{
+            width: 250px;
+            padding: 2rem;
+            border-radius: 2rem;
+            background: #fff;
+            box-shadow: 0.2rem 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+
+            h2{
+                margin-bottom: 2rem;
+            }
+
+            p{
+                font-style: italic;
+            }
+
+            &--delivery{
+                span{
+                    font-weight: 600;
+                }
+            }
+
+            &--payment{
+
+                font-weight: bold;
+
+                span{
+                    margin-left: 0.5rem;
+                    font-weight: bold;
+                    font-style: none;
+                }
+            }
+        }
+    }
+
+}

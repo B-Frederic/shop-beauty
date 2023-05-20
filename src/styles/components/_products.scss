@@ -48,7 +48,7 @@
     &__product{
         position: relative;
         display: flex;
-        width: 12rem;
+        width: 13rem;
         height: 8rem;
         padding: 1rem;
         background: #fff;
@@ -94,11 +94,16 @@
         button{
             width: max-content;
             padding: 5px 10px;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             border: 1px solid var(--black);
             border-radius: 15px;
-            background: #a7a5a5;
+            color: #fff;
+            background: #3297FD;
             cursor: pointer;
+
+            &:hover {
+                background: #246eb8;
+            }
         }
     }
 }

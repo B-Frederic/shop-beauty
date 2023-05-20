@@ -5,8 +5,11 @@ import { Plane } from "../assets";
 import { ProductsData } from "../data/products_data";
 // AutoAnimate
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+// Components
+import Product from "./Product";
 
 const Products = () => {
+
   const [parent] = useAutoAnimate();
   const [listProducts, setListProducts] = useState(ProductsData);
 
@@ -33,21 +36,7 @@ const Products = () => {
         </menu>
         <div className="container-products__list" ref={parent}>
           {listProducts.map((product, index) => (
-            <div key={index} className="container-products__product">
-              <div className="container-products__card">
-                <div className="container-products__card-info">
-                  <h3>{product.name}</h3>
-                  <p>{product.detail}</p>
-                </div>
-                <span>{product.price}€</span>
-                <button>Ajouter</button>
-              </div>
-              <img
-                className="container-products__product-img"
-                src={product.img}
-                alt={product.name}
-              />
-            </div>
+            <Product key={index} product={product} />
           ))}
         </div>
       </div>

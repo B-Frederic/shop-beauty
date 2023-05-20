@@ -1,24 +1,45 @@
 // React
 import React from 'react';
+import { Outlet, RouterProvider, ScrollRestoration, createBrowserRouter } from 'react-router-dom';
 // Components
 import Header from './components/Layout/Header';
-import HeroSection from './components/HeroSection';
-import Slider from './components/Slider';
-import VirtualCard from './components/VirtualCard';
-import Products from './components/Products';
-import Testimonials from './components/Testimonials';
 import Footer from './components/Layout/Footer';
+// Pages
+import Home from './pages/Home';
+import Cart from './pages/Cart';
+
+const Layout = () => {
+  return (
+    <div>
+      <Header />
+      <ScrollRestoration />
+      <Outlet />
+      <Footer />
+    </div>
+  )
+}
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/cart",
+        element: <Cart />
+      }
+    ]
+  }
+])
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <HeroSection />
-      <Slider />
-      <VirtualCard />
-      <Products />
-      <Testimonials />
-      <Footer />
+      <RouterProvider router={router} />
     </div>
   );
 };
