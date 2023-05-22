@@ -4,19 +4,32 @@
     .swiper{
         position: unset;
         width: 70%;
-        height: 12rem;
+        height: 15rem;
+        padding-bottom: 3rem;
+
+        @media (max-width: 900px) {
+            width: 90%;
+        }
+
+        @media (max-width: 500px) {
+            height: 16rem;
+        }
     }
 
     .swiper-button-prev{
-        left: 10rem;
+        left: 6rem;
     }
 
     .swiper-button-next{
-        right: 10rem;
+        right: 6rem;
     }
 
     .swiper-button-next, .swiper-button-prev{
         color: #000;
+
+        @media (max-width: 1024px) {
+            display: none;         
+        }
     }
 
     .swiper-slide{
@@ -24,10 +37,28 @@
         display: flex;
         padding: 1rem;
         border-radius: 10px;
-        background: #fff;
+        background: var(--white);
         overflow: hidden;
         user-select: none;
         cursor: grab;
+    }
+
+    .swiper-pagination{
+        margin-top: 30px;
+
+        @media (max-width: 500px) {
+            margin-top: 40px;
+        }
+
+        span{
+            width: 0.7rem;
+            height: 0.7rem;
+
+            @media (max-width: 500px) {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
     }
 
     &__card{
@@ -35,7 +66,7 @@
         flex-direction: column;
         justify-content: space-between;
 
-        &-info{
+        &--info{
             display: flex;
             flex-direction: column;
 
@@ -55,7 +86,7 @@
             font-weight: bold;
         }
 
-        &-tag{
+        &--tag{
             width: max-content;
             padding: 5px 10px;
             font-size: 0.7rem;

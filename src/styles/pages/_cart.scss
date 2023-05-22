@@ -1,13 +1,29 @@
 .container-cart{
     display: grid;
     grid-template-columns: 3fr 1.5fr;
-    width: 80%;
+    width: 1100px;
     margin: 2rem auto 4rem;
+
+    @media (max-width: 1000px){
+        display: flex;
+        flex-direction: column;
+        width: 900px;
+    }
+
+    @media (max-width: 949px){
+        width: 100%;
+        padding: 1rem;
+        margin: 0 auto;
+    }
 
     &__info{
         display: flex;
         justify-content: center;
         margin-left: 2rem;
+
+        @media (max-width: 500px){
+            margin-left: 0;
+        }
         
         &-cart{
             width: 350px;
@@ -15,8 +31,13 @@
             margin-top: 4rem;
             padding: 2rem;
             border-radius: 2rem;
-            background: #fff;
+            background: var(--white);
             box-shadow: 0.2rem 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+
+            @media (max-width: 950px){
+                margin-top: 2rem;
+            }
+            
             
             h2{
                 margin-bottom: 2rem;

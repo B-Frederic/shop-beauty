@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/CartProduct";
 
 const Product = ({ product }) => {
+
   const dispatch = useDispatch();
 
   return (
@@ -37,6 +38,9 @@ const Product = ({ product }) => {
         src={product.img}
         alt={product.name}
       />
+      <div className="container-products__product-tag">
+        <div>Qté: <span>{product.stock}</span></div>
+      </div>
     </div>
   );
 };

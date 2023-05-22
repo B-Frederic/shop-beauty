@@ -17,10 +17,10 @@ const CartItem = () => {
       </div>
       <div className="container-cart-item__box">
         {productData.map((product, index) => (
-          <div className="container-cart-item__box-product" key={index}>
+          <div className="container-cart-item__box--product" key={index}>
             <h3>{product.name}</h3>
             <img src={product.img} alt={`produit ${product.name}`} />
-            <div className="container-cart-item__box-product-box-quantity">
+            <div className="container-cart-item__box--product-box-increment">
                 <button onClick={() =>
                     dispatch(
                       increamentQuantity({
@@ -33,7 +33,7 @@ const CartItem = () => {
                       })
                     )
                   }>+</button>
-                <p className="container-cart-item__box-product-box-quantity--quantity">{product.quantity}</p>
+                <p className="container-cart-item__box--product-quantity">{product.quantity}</p>
                 <button onClick={() =>
                     dispatch(
                       decrementQuantity({
@@ -46,8 +46,8 @@ const CartItem = () => {
                       })
                     )}>-</button>
             </div>
-            <p className="container-cart-item__box-product--price">{product.quantity * product.price}€</p>
-            <HiOutlineTrash className="container-cart-item__box-product--trash-can" onClick={() => dispatch(deleteItem(product.id))} />
+            <p className="container-cart-item__box--product-price">{product.quantity * product.price}€</p>
+            <HiOutlineTrash className="container-cart-item__box--product-trash-can" onClick={() => dispatch(deleteItem(product.id))} />
           </div>
         ))}
       </div>

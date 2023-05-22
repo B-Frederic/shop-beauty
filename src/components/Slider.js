@@ -15,6 +15,18 @@ const Slider = () => {
       <Swiper
         modules={[Pagination, Navigation]}
         navigation
+        pagination={{ clickable: true }}
+        breakpoints={{
+          900: {
+            slidesPerView : 3,
+          },
+          640: {
+            slidesPerView : 2,
+          },
+          0: {
+            slidesPerView : 1,
+          }
+        }}
         spaceBetween={40}
         slidesPerView={3}
         slidesPerGroup={1}
@@ -23,12 +35,12 @@ const Slider = () => {
         {SliderProducts.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="container-slider__card">
-              <div className="container-slider__card-info">
+              <div className="container-slider__card--info">
                 <h3>{slide.name}</h3>
                 <p>{slide.detail}</p>
               </div>
               <span>{slide.price}€</span>
-              <div className="container-slider__card-tag">Top produit</div>
+              <div className="container-slider__card--tag">Top produit</div>
             </div>
             <img src={slide.img} alt={slide.name} className="img" />
           </SwiperSlide>

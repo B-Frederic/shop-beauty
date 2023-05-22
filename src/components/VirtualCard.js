@@ -12,7 +12,7 @@ const VirtualCard = () => {
                 <img src={Shade} alt="shade" />
             </div>
             <div className="container-virtual__right">
-                <div className="container-virtual__right-wrapper">
+                <div className="container-virtual__right--wrapper">
                     <ReactCompareImage leftImage={Before} rightImage={After} />
                 </div>
             </div>
