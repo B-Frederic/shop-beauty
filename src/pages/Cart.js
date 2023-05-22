@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import StripeCheckout from "react-stripe-checkout";
 // Components
 import CartItem from '../components/CartItem';
-import axios from 'axios';
 
 
 const Cart = () => {
@@ -29,14 +28,6 @@ const Cart = () => {
 
     }, [productData, delivery]);
 
-    
-    // Create fake token for Stripe (error bypasse)
-    const payment = async(token) =>{
-        await axios.post("http://localhost:8000/payment", {
-            amout: totalAmt * 100,
-            token: token
-        })
-    }
 
     return (
         <div className="container-cart">
@@ -45,10 +36,10 @@ const Cart = () => {
                 <div className="container-cart__info">
                     <div className="container-cart__info-cart">
                         <h2>Paniers totals</h2>
-                        <p className="container-cart__info-cart--sub-total">Sous-total : <span>{totalAmt - delivery.current?.toFixed(2)}€</span></p>
+                        <p className="container-cart__info-cart--sub-total">Sous-total : <span>{totalAmt - delivery.current}€</span></p>
                         <p className="container-cart__info-cart--delivery">Frais de livraison: <span style={{color: delivery.current !== 0 ? "black" : "rgb(94, 182, 94)"}}>{delivery.current}€</span></p>
                         <span className="container-cart__info-cart--delivery-offer">(livraison offerte dès 80€ d'achat)</span>
-                        <p className="container-cart__info-cart--payment">Total à payer : <span>{productData.length >= 1 ? totalAmt?.toFixed(2) : 0}€</span></p>
+                        <p className="container-cart__info-cart--payment">Total à payer : <span>{productData.length >= 1 ? totalAmt : 0}€</span></p>
                         {
                         totalAmt - delivery.current > 0 ? (
                             <>
@@ -60,8 +51,9 @@ const Cart = () => {
                                         amount={totalAmt * 100}
                                         label="Payer"
                                         currency="EUR"
-                                        description={`Montant total à payer ${totalAmt?.toFixed(2)} €`}
-                                        token={payment}
+                                        description={`Montant total à payer ${totalAmt} €`}
+                                        // Create fake token Stripe
+                                        token={() => ""}
                                         email={"unmailpourtester@test.fr"}
                                     />
                                 </div>

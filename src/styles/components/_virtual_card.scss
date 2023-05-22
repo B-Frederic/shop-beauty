@@ -2,15 +2,31 @@
 
     display: flex;
     justify-content: space-around;
-    margin-top: 6rem;
+    margin-top: 2rem;
     margin-bottom: 6rem;
     padding: 2rem;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        gap: 2rem;
+        text-align: center;       
+    }
+
 
     &__left{
         position: relative;
         display: flex;
         flex-direction: column;
         gap: 2rem;
+
+        @media (max-width: 900px) {
+            gap: 1rem                
+        }
 
         :nth-child(1){
             display: block;
@@ -37,13 +53,25 @@
             position: absolute;
             bottom: 5rem;
             width: 10rem;
+
+            @media (max-width: 900px) {
+                display: none;                
+            }
         }
     }
 
     &__right{
 
-        &-wrapper{
+        &--wrapper{
             width: 30rem;
+
+            @media (max-width: 500px) {
+                width: 400px;
+            }
+
+            @media (max-width: 400px) {
+                width: 310px;
+            }
         }
     }
 }
