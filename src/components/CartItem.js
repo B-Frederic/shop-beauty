@@ -1,20 +1,45 @@
 // React
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HiOutlineTrash } from "react-icons/hi";
+// React icons
+import { FaArrowUp } from "react-icons/fa";
 // Redux
 import { useDispatch, useSelector } from "react-redux";
-import { decrementQuantity, deleteItem, increamentQuantity } from "../redux/CartProduct";
+import { decrementQuantity, deleteItem, increamentQuantity, resetCart } from "../redux/CartProduct";
 
 const CartItem = () => {
 
   const dispatch = useDispatch();
   const productData = useSelector((state) => state.shop.productData);
 
+  const [scrolling, setScrolling] = useState(false);
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+
+    const onScroll = (e) => {
+      setScrollTop(e.target.documentElement.scrollTop);
+      setScrolling(e.target.documentElement.scrollTop > 600);
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+
+  }, [scrollTop]);
+
   return (
     <div className="container-cart-item">
       <div>
         <h2>Mon panier d'achat</h2>
       </div>
+        <div className="container-cart-item--reset-cart">
+          <button onClick={() => {
+            if (productData.length > 1){
+              return dispatch(resetCart());
+            }
+          }}>Vider mon panier</button>
+        </div>
       <div className="container-cart-item__box">
         {productData.map((product, index) => (
           <div className="container-cart-item__box--product" key={index}>
@@ -51,6 +76,13 @@ const CartItem = () => {
           </div>
         ))}
       </div>
+      {
+        scrolling && (
+          <div className="container-cart-item--to-top">
+              <FaArrowUp onClick={() => window.scrollTo(0, 0)} />
+          </div>
+        )
+      }
     </div>
   );
 };

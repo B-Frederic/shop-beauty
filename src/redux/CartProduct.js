@@ -9,46 +9,45 @@ export const CartProduct = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-       const item = state.productData.find(
+      const item = state.productData.find(
         (item) => item.id === action.payload.id
-       )
+      );
 
-       if(item){
-        item.quantity += action.payload.quantity
-       } else {
-        state.productData.push(action.payload)
-       }
+      if (item) {
+        item.quantity += action.payload.quantity;
+      } else {
+        state.productData.push(action.payload);
+      }
     },
     deleteItem: (state, action) => {
-        state.productData = state.productData.filter(
-          (item) => item.id !== action.payload
-        );
+      state.productData = state.productData.filter(
+        (item) => item.id !== action.payload
+      );
+    },
+    resetCart: (state) => {
+      state.productData = [];
     },
     increamentQuantity: (state, action) => {
-        const item = state.productData.find(
-          (item) => item.id === action.payload.id
-        );
-        if (item) {
-          item.quantity++;
-        }
-      },
-      decrementQuantity: (state, action) => {
-        const item = state.productData.find(
-          (item) => item.id === action.payload.id
-        );
-        if (item.quantity === 1) {
-          item.quantity = 1;
-        } else {
-          item.quantity--;
-        }
-      },
+      const item = state.productData.find(
+        (item) => item.id === action.payload.id
+      );
+      if (item) {
+        item.quantity++;
+      }
+    },
+    decrementQuantity: (state, action) => {
+      const item = state.productData.find(
+        (item) => item.id === action.payload.id
+      );
+      if (item.quantity === 1) {
+        item.quantity = 1;
+      } else {
+        item.quantity--;
+      }
+    },
   },
 });
 
-export const {
-  addToCart,
-  deleteItem,
-  increamentQuantity,
-  decrementQuantity,
-} = CartProduct.actions;
+export const { addToCart, deleteItem, resetCart, increamentQuantity, decrementQuantity } =
+  CartProduct.actions;
 export default CartProduct.reducer;

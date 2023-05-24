@@ -37,6 +37,7 @@
             grid-area: left;
             justify-content: center;
             margin-top: 2rem;
+            margin-bottom: 2rem;
         }
 
 
@@ -54,6 +55,7 @@
             @media (max-width: 500px){
                 margin: 0 auto;
                 text-align: center;
+                font-size: 1.8rem;
             }
         }
 
