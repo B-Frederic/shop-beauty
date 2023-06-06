@@ -55,6 +55,7 @@
                 font-weight: 500;
             
                 li {
+                    font-size: 1.1rem;
                     &:hover{
                         color:#fe956f;
                         cursor: pointer;
@@ -90,6 +91,10 @@
 
                 &:hover{
                     transform: scale(1.2);
+
+                    @media (max-width: 900px){
+                        transform: scale(1);
+                    }
                 }
             }
 
@@ -104,6 +109,10 @@
 
                 &:hover{
                     transform: scale(1.1);
+
+                    @media (max-width: 900px){
+                        transform: scale(1);
+                    }
                 }
             }
 

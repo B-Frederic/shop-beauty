@@ -35,7 +35,7 @@ const CartItem = () => {
       </div>
         <div className="container-cart-item--reset-cart">
           <button onClick={() => {
-            if (productData.length > 1){
+            if (productData.length > 0){
               return dispatch(resetCart());
             }
           }}>Vider mon panier</button>

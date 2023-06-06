@@ -2,6 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { RxCross2 } from "react-icons/rx";
+// Motion
+import { motion } from "framer-motion"
+
 
 const BurgerMenu = ({ setBurgerMenu }) => {
 
@@ -10,7 +13,13 @@ const BurgerMenu = ({ setBurgerMenu }) => {
       };
 
     return (
-        <div className="container-responsive-menu">
+        <motion.div 
+        initial={{x: -300}}
+        animate={{x: 0}}
+        transition={{
+            duration: "0.8"
+        }}
+        className="container-responsive-menu">
             <div>
                 <nav>
                     <ul>
@@ -25,7 +34,7 @@ const BurgerMenu = ({ setBurgerMenu }) => {
             <div className="container-responsive-menu--close">
                 <RxCross2 onClick={handleCloseBurgerMenu} />
             </div>
-        </div>
+        </motion.div>
     );
 };
 
