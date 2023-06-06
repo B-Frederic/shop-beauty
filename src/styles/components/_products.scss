@@ -123,12 +123,17 @@
                 top: 10px;
             }
 
+            &--icon{
+                font-size: 1.5rem;
+                color: orange;
+            }
+
             span{
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 30px;
-                height: 30px;
+                width: 35px;
+                height: 35px;
                 margin-left: 0.2rem;
                 border-radius: 50%;
                 background: var(--pink);
@@ -178,6 +183,10 @@
 
             &:hover {
                 background: #246eb8;
+
+                @media (max-width: 900px){
+                    background: #3297FD;
+                }
             }
         }
     }

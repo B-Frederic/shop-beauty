@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 100%;
     height: 100vh;
     background: var(--black);
     opacity: 0.95;
@@ -13,8 +13,8 @@
         display: none;
     }
 
-    @media (max-width: 500px){
-        width: 200px;
+    @media (min-width: 400px){
+        width: 300px;
     }
 
     ul{
@@ -25,7 +25,7 @@
         margin-top: 2rem;
 
         li{
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-top: 3rem;
             padding: 1rem;
             color: #fff;

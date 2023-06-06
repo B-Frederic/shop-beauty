@@ -1,5 +1,7 @@
 // React
 import React from "react";
+// React icons
+import { RiStarSFill } from "react-icons/ri";
 // Redux
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/CartProduct";
@@ -39,7 +41,7 @@ const Product = ({ product }) => {
         alt={product.name}
       />
       <div className="container-products__product-tag">
-        <div>Qté: <span>{product.stock}</span></div>
+        <div><RiStarSFill className="container-products__product-tag--icon" /><span>{product.rating}</span></div>
       </div>
     </div>
   );
