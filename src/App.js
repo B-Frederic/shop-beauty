@@ -7,6 +7,7 @@ import Footer from './components/Layout/Footer';
 // Pages
 import Home from './pages/Home';
 import Cart from './pages/Cart';
+import Error from './pages/Error';
 
 const Layout = () => {
   return (
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         element: <Cart />
       }
     ]
+  },
+  {
+    path: "/*",
+    element: <Error />
   }
 ])
 
