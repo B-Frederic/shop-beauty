@@ -5,6 +5,8 @@ import { RiStarSFill } from "react-icons/ri";
 // Redux
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/CartProduct";
+// Toastify
+import { toast } from "react-toastify";
 
 const Product = ({ product }) => {
 
@@ -19,7 +21,7 @@ const Product = ({ product }) => {
         </div>
         <span>{product.price}€</span>
         <button
-          onClick={() => {
+          onClick={() => 
             dispatch(
               addToCart({
                 id: product.id,
@@ -28,9 +30,9 @@ const Product = ({ product }) => {
                 detail: product.detail,
                 quantity: 1,
                 price: product.price,
-              })
-            );
-          }}
+              }) 
+            ) & toast.success(`${product.name} a été ajouté au panier`) 
+          }
         >
           Ajouter
         </button>

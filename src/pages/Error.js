@@ -10,7 +10,7 @@ const Error = () => {
     return (
         <div>
             <div className="container-error">
-                <p><span className="container-error--span">Oups !!</span> cette page n'existe pas.<br/> Ne vous inquiétez pas, vous êtes redirigé vers l'accueil du site.</p>
+                <p><span>Oups !!</span> cette page n'existe pas.<br/> Ne vous inquiétez pas, vous êtes redirigé vers l'accueil du site.</p>
             </div>
         </div>
     );
