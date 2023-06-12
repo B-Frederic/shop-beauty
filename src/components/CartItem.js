@@ -35,7 +35,7 @@ const CartItem = () => {
       </div>
         <div className="container-cart-item--reset-cart">
           <button onClick={() => {
-            if (productData.length > 0){
+            if (productData.length > 0 && window.confirm("Voulez-vous vider l'ensemble de votre panier ?")){
               return dispatch(resetCart());
             }
           }}>Vider mon panier</button>
@@ -72,7 +72,7 @@ const CartItem = () => {
                     )}>-</button>
             </div>
             <p className="container-cart-item__box--product-price">{product.quantity * product.price}€</p>
-            <HiOutlineTrash className="container-cart-item__box--product-trash-can" onClick={() => dispatch(deleteItem(product.id))} />
+            <HiOutlineTrash className="container-cart-item__box--product-trash-can" onClick={() => window.confirm(`Voulez-vous supprimer "${product.name}" de votre panier ?`) ? dispatch(deleteItem(product.id)) : ""} />
           </div>
         ))}
       </div>
