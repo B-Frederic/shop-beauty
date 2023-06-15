@@ -48,6 +48,18 @@ const CartItem = () => {
             <div className="container-cart-item__box--product-box-increment">
                 <button onClick={() =>
                     dispatch(
+                      decrementQuantity({
+                        id: product.id,
+                        title: product.title,
+                        image: product.image,
+                        price: product.price,
+                        quantity: 1,
+                        description: product.description,
+                      })
+                      )}>-</button>
+                  <p className="container-cart-item__box--product-quantity">{product.quantity}</p>
+                <button onClick={() =>
+                    dispatch(
                       increamentQuantity({
                         id: product.id,
                         title: product.title,
@@ -58,18 +70,6 @@ const CartItem = () => {
                       })
                     )
                   }>+</button>
-                <p className="container-cart-item__box--product-quantity">{product.quantity}</p>
-                <button onClick={() =>
-                    dispatch(
-                      decrementQuantity({
-                        id: product.id,
-                        title: product.title,
-                        image: product.image,
-                        price: product.price,
-                        quantity: 1,
-                        description: product.description,
-                      })
-                    )}>-</button>
             </div>
             <p className="container-cart-item__box--product-price">{product.quantity * product.price}€</p>
             <HiOutlineTrash className="container-cart-item__box--product-trash-can" onClick={() => window.confirm(`Voulez-vous supprimer "${product.name}" de votre panier ?`) ? dispatch(deleteItem(product.id)) : ""} />
